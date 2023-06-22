@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EDITALLY - Perfil</title>
+
+    <!--<link rel="stylesheet" href="mystyle.css">-->
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: url("svg.png");
+        background-size:cover;
+        background-attachment: fixed;
+      }
+
+      .container-principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: space-evenly;
+        min-height: 700px;
+        height: 100vh;
+      }
+
+      .container-principal{
+
+      }
+
+      .imagem {
+        display:block;
+        position:relative;
+        width: 200px;
+        margin-bottom: 60px;
+      }
+
+      fieldset {
+        border: 0;
+      }
+
+      .formulario {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+
+        width: 350px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 30px; /* Adicionado para separar o formulário do link de cadastro */
+        background-color: rgba(255,255,255,50%);
+        min-height: 450px;
+        min-width: 200px;
+      }
+
+      legend {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 0px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      input[type="submit"], input[type="button"] {
+        display:block;
+        margin-bottom: 0px;
+        padding: 10px 20px;
+        background-color: whitesmoke;
+        color: black;
+        border: 1px solid gray;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .campos-input {
+        width:100%
+      }
+
+      .botao {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container-principal">
+      <img class="imagem" src="logo-no-background-azul.png">
+
+      <form id="loginForm">
+        <fieldset>
+          <legend>Perfil:</legend>
+          <div class="formulario">
+            <div class="campos-input">
+              <label for="novoNome">Novo Nome:</label>
+              <input type="text" id="novoNome" name="novoNome" placeholder="Para manter atual, deixe em branco!">
+            </div>
+            <div class="campos-input">
+              <label for="novoEmail">Novo Email:</label>
+              <input type="text" id="novoEmail" name="novoEmail" placeholder="Para manter atual, deixe em branco!">
+            </div>
+            <div class="campos-input">
+              <label for="novaSenha">Nova Senha:</label>
+              <input type="password" id="novaSenha" name="novaSenha" placeholder="Para manter atual, deixe em branco!">
+            </div>
+            <div class="campos-input">
+              <label for="senha">Senha Atual (Campo Obrigatório):</label>
+              <input type="password" id="senha" name="senha" required placeholder="Confirmar com senha para Alterar ou Excluir.">
+            </div>
+
+            <div class="botao">
+              <input type="submit" value="Alterar" class="submit">
+              <input type="button" Value="Excluir Conta" onclick="excluirConta()">
+              <input type="button" Value="Voltar" onclick="voltar()">
+            </div>
+
+          </div>
+
+        </fieldset>
+      </form>
+
+    </div>
+
+  </body>
+
+  <script>
+/*
+var nome = localStorage.getItem("nome");
+var email = localStorage.getItem("email");
+document.getElementById("novoNome").setAttribute("placeholder", nome);
+document.getElementById("novoEmail").setAttribute("placeholder", email);
+*/
+window.addEventListener('DOMContentLoaded', validarToken);
+
+function validarToken() {
+
+  if (localStorage.getItem('token') && localStorage.getItem('email')) {
+    let token = localStorage.getItem("token");
+    console.log("token: ",token);
+    let email = localStorage.getItem("email");
+    console.log("email: ",email);
+
+    return new Promise((resolve, reject) => {
+      const data = { token: token };
+
+      fetch('/validar-token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(responseData => {
+        console.log('responseX: ',responseData);
+        if(responseData.email == email)
+        {
+          usuario = responseData;
+          console.log("Token válido!");
+          //window.location.href = "index.html";
+          resolve();
+        }
+        else
+        {
+          console.log("Token inválido!");
+          window.location.href = "login.html";
+          reject();
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao recuperar dados:', error);
+        reject();
+      });
+    });
+  }
+}
+
+function voltar() {
+  window.location.href = "index.html";
+}
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var senha = document.getElementById("senha").value;
+  var novoNome = document.getElementById("novoNome").value;
+  var novoEmail = document.getElementById("novoEmail").value;
+  var novaSenha = document.getElementById("novaSenha").value;
+
+  //if(novoNome != "") {localStorage.setItem("nome", novoNome);}
+  //if(novoEmail != "") {localStorage.setItem("email", novoEmail);}
+
+  fetch('/perfil', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ nome, email, senha, novoNome, novoEmail, novaSenha })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.error) {
+      alert(data.error);
+    } else {
+      if (novoNome != "") {localStorage.setItem("nome", novoNome);}
+      if (novoEmail != "") {localStorage.setItem("email", novoEmail); localStorage.setItem('token', data);}
+
+      window.location.href = '/index.html';
+    }
+  })
+  .catch(error => {
+    console.error(error);
+  });
+});
+
+function excluirConta() {
+  if (confirm("Tem certeza que deseja excluir sua conta?")) {
+    var senha = document.getElementById("senha").value;
+    let email = localStorage.getItem("email");
+
+    fetch('/excluir-conta', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, senha })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        alert(data.error);
+      } else {
+        alert(data.message);
+        localStorage.removeItem("token");
+        localStorage.removeItem("email");
+        localStorage.removeItem("nome");
+        window.location.href = '/login.html';
+      }
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  }
+
+}
+
+  </script>
+
+
+</html>

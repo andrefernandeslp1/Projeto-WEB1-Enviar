@@ -16,16 +16,16 @@ Batizado de Editally, o portal se propõe a oferecer um ambiente de controle de 
 
 ## 3. Instruções
 ### 3.1. Instalação do Node.js
-Para rodar o servidor local, será necessário instalar o Node.js na sua máquina. Prossiga à instalação no seguinte link: [Node JS](https://nodejs.org/en).
+Para rodar o servidor local, será necessário instalar o Node.js na sua máquina. Prossiga à instalação através do seguinte link: [Node JS](https://nodejs.org/en).
 
 ### 3.2. Baixar arquivos do Repositório
 Após a instalação do Node.js, baixe a pasta `/SERVIDOR` deste repositório para o local de sua preferência em seu computador.
 
 ### 3.3. Inicializar Servidor Local
-Abra o Prompt de Comando dentro da pasta `/SERVIDOR` e excecute o seguinte comando: `node meuservidor.js`
+Abra o Prompt de Comando dentro da pasta `/SERVIDOR` e excecute o seguinte comando: `node meuservidor.js`. Caso não hajam problemas, seu servidor local estará ativo.
 
 ### 3.4. Acessar Portal
-Com o servidor rodando, abra o browser e entre no seguinte endereço: `http://localhost:3000/`
+Com o servidor rodando, abra o browser e acesse seguinte endereço: `http://localhost:3000/`
 
 *Voilá!!!* Caso todos as etapas acima tiverem sido processadas corretamente, você terá acesso ao Portal e poderá iniciar sua jornada de estudos.
 

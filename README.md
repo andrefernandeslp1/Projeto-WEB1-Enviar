@@ -1,5 +1,37 @@
-# Projeto-WEB1-Enviar
-Projeto de WEB1: Portal de controle de estudos para processos seletivos.
+# Projeto: Portal de controle de estudos para concursos.
+
+## Universidade Federal do Rio Grande do Norte
+## Disciplina: Desenvolvimento de Sistemas WEB 2023.1
+### Professor: Jair C. Leite
+### Aluno: André Augusto Fernandes
+#
+## 1. Introdução
+Este projeto foi desenvolvido para a disciplina de Desenvolvimento de Sistemas WEB I, como meio de avaliar os conhecimentos adquiridos pelo mesmo ao longo da disciplina.
+Os requisitos da avaliação eram desenvolver um sistema WEB composto de FrontEnd com a utilização das tecnologias Html, CSS e JavaScript, além de um servidor local, BackEnd, utilizando Node e Javascript, para processar as requisições do cliente.
+<br><br>
+
+## 2. Objetivo
+Batizado de Editally, o portal se propõe a oferecer um ambiente de controle de estudos para processos seletivos levados a cabo por meio de provas de avaliação de conhecimentos, em que se faz necessária a verticalização das principais informações e conteúdo programático objetos do edital. O candidato poderá cadastrar seu edital de forma rápida e eficiente, e acompanhar sua evolução por meio de funcionalidades pensadas para facilitar seu estudo.
+<br><br>
+
+## 3. Instruções
+### 3.1. Instalação do Node.js
+Para rodar o servidor local, será necessário instalar o Node.js na sua máquina. Prossiga à instalação no seguinte link: [Node JS](https://nodejs.org/en).
+
+### 3.2. Baixar arquivos do Repositório
+Após a instalação do Node.js, baixe a pasta `/SERVIDOR` deste repositório para o local de sua preferência em seu computador.
+
+### 3.3. Inicializar Servidor Local
+Abra o Prompt de Comando dentro da pasta `/SERVIDOR` e excecute o seguinte comando: `node meuservidor.js`
+
+### 3.4. Acessar Portal
+Com o servidor rodando, abra o browser e entre no seguinte endereço: `http://localhost:3000/`
+
+*Voilá!!!* Caso todos as etapas acima tiverem sido processadas corretamente, você terá acesso ao Portal e poderá iniciar sua jornada de estudos.
+
+A seguir descreverei as principais funcionalidades do site e falarei sobre sua implementação. Vamos lá!?
+
+
 
 
 ![Screenshot 2023-06-23 at 11-28-57 EDITALLY - Login](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/69270ed7-34f7-4469-b80d-7472eb630728)

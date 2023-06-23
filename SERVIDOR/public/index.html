@@ -10,19 +10,12 @@
 
     <link rel="stylesheet" href="http://localhost:3000/index.css">
     <link rel="shortcut icon" href="logo-no-background.png" type="image/x-icon">
-    <!--definir o mime type para o css especificado acima-->
-    <!--usar css do servidor-->
-    <!--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsonwebtoken/8.5.1/jsonwebtoken.min.js"></script>
-    -->
 
   </head>
   <body>
     <div class="container-total">
       <header>
-        <!--<span href="#" class="logo" style="color:white">EdiTally</span>-->
         <img src="logo-no-background.png" style="width:auto;height:50px;padding:7px 10px 7px 15px;">
-        <!--<a href="#" class="usuario" style="float:right">Usuário</a>-->
 
         <div class="dropdown">
           <i class="material-icons" style="font-size:36px;padding:7px">person</i>
@@ -40,8 +33,6 @@
         <!--Novos botões de editais serão adicionados aqui-->
       </div>
 
-      <!--<h1 class="edital-corrente">Edital X</h1>-->
-
       <div class="container-edital" id="container-edital" style="display:none">
 
         <div class="nav-edital">
@@ -56,8 +47,6 @@
             <div class="dropdown">
               <i class="material-icons" style="font-size:36px;padding:7px">more_horiz</i>
               <div class="dropdown-content">
-                <!--<a onclick="exportarExcell()">Exportar Excel</a>
-                <a onclick="exportarEdital()">Exportar JSON</a>-->
                 <a onclick="excluirEdital()">Excluir</a>
                 <a onclick="renomearEdital()">Renomear</a>
                 </div>
@@ -90,22 +79,6 @@
                 <span class="data-prova" id="data-prova"></span>
                 <span class="button-banca" onclick="mostrarPrompt('data-prova')"><i class="material-icons" style="font-size:18px;padding:5px 0;color:gray;cursor: pointer;">edit</i></span>
 
-                <!--
-                <div class="data-inscricao">
-                  <div class="data-0">
-                    <label for="data-inscricao-inicio">Inscrição de</label>
-                    <input type="date" id="data-inscricao-inicio" name="data-inscricao-inicio">
-                  </div>
-                  <div class="data-1">
-                    <label for="data-inscricao-fim"> a </label>
-                    <input type="date" id="data-inscricao-fim" name="data-inscricao-fim">
-                  </div>
-                </div>
-                <div>
-                  <label for="data-prova">Data da Prova:</label>
-                  <input type="date" id="data-prova" name="data-prova">
-                </div>
-                -->
               </div>
 
               <ul id="list">
@@ -159,11 +132,8 @@
       </div>
     </div>
 
-    <script type="text/javascript" src="http://localhost:3000/index.js"></script>
+    <script type="text/javascript" src="/index.js"></script>
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
-
 
   </body>
 </html>
-
-<!--Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta vitae fugiat ex perspiciatis voluptas numquam placeat modi nam pariatur illum libero recusandae repudiandae nostrum, incidunt ipsa suscipit. Aperiam, aliquid quia!-->

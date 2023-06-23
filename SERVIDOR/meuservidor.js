@@ -59,7 +59,6 @@ const server = http.createServer((req, res) => {
         res.writeHead(500);
         res.end('Erro interno do servidor');
       } else {
-        //res.writeHead(200, { 'Content-Type': 'text/html' });
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(content);
       }
@@ -147,7 +146,7 @@ const server = http.createServer((req, res) => {
       users.push(newUser);
       usersData.push(newUserData);
 
-      //! Salve os dados no arquivo JSON
+      //! Salvar os dados no arquivo JSON
       try {
         fs.writeFileSync(DATA_FILE_PATH_USERS, JSON.stringify(users));
         fs.writeFileSync(DATA_FILE_PATH_USERS_DATA, JSON.stringify(usersData));
@@ -263,27 +262,7 @@ const server = http.createServer((req, res) => {
       }
     });
   };
-/*
-    console.log("parsedFormData: ",parsedFormData);//!
-    const token = parsedFormData.token;
-    console.log("token: ",token);//!
-    jwt.verify(token, SECRET_KEY, (err, decoded) => {
-      if (err) {
-        console.log("decoded err: ",decoded);
-        res.writeHead(403, { 'Content-Type': 'text/plain' });
-        res.end('Token inválido');
-      } else {
-        console.log("decoded ok: ",decoded);
-        console.log("Token Váldo!");
-        // Token válido, exibir a página principal
 
-        const userData = usersData.find((userData) => userData.email === decoded.email);
-        console.log("userData1: ",userData);//!
-        returnJSON(userData);
-
-      }
-    });
-*/
   if (req.method === 'GET') {
     const PATHS = {
       HOME: '/',
@@ -294,34 +273,25 @@ const server = http.createServer((req, res) => {
     }
 
     if (pathname === PATHS.HOME) {
-      // Verifica se o usuário está logado
-      // Se não estiver, redireciona para a página de login
-      // Caso contrário, carrega a página index.html
-      // Exemplo:
-      // loadPage(userLogged ? 'index.html' : 'login.html');
+
       loadPage('login.html');
     } else if (pathname === PATHS.INDEX) {
-      // Verifica se o usuário está logado
-      // Se não estiver, redireciona para a página de login
-      // Caso contrário, carrega a página index.html
-      // Exemplo:
-      // loadPage(userLogged ? 'index.html' : 'login.html');
+
       loadPage('index.html');
     } else if (pathname === PATHS.LOGIN) {
+
       loadPage('login.html');
     } else if (pathname === PATHS.CADASTRO) {
+
       loadPage('cadastro.html');
     } else if (pathname === PATHS.PROFILE) {
-      // Verifica se o usuário está logado
-      // Se não estiver, redireciona para a página de login
-      // Caso contrário, carrega a página perfil.html
-      // Exemplo:
-      // loadPage(userLogged ? 'perfil.html' : 'login.html');
+
       loadPage('perfil.html');
     } else {
       console.log(filePath);
       returnFile(filePath);
     }
+
   } else if (req.method === 'POST') {
     if (pathname === '/login') {
       let formData = '';

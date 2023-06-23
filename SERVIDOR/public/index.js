@@ -1,57 +1,5 @@
 /* index.js */
 
-//COMUNICAÇÃO COM O SERVIDOR
-/*
-function enviarDadosAoServidor() {
-  sortEditaisEMaterias();
-  const data = usuario;
-  console.log("data: ",data);
-
-  fetch('/gravar-dados', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(result => {
-    console.log('Dados gravados com sucesso:', result);
-  })
-  .catch(error => {
-    console.error('Erro ao gravar dados:', error);
-  });
-}
-*/
-/*
-function exportarExcel() {
-  let indexEdital = getIndexEdital(document.getElementById("nome-edital").innerHTML);
-  let edital = usuario.editais[indexEdital];
-  let auxMateriaCorrente = edital.materiaCorrente;
-  if(edital.materias.length > 0){
-
-    edital.materiaCorrente = edital.materias[0].nome;
-
-  }
-  // transformar objeto usuario em documento excell
-  let wb = XLSX.utils.book_new();
-  let ws = XLSX.utils.json_to_sheet(edital.info_importantes.topics);
-  XLSX.utils.book_append_sheet(wb, ws, "info_importantes");
-  if(edital.materias.length > 0){
-    edital.materias.forEach(function(materia) {
-      let ws = XLSX.utils.json_to_sheet(materia.topics);
-      XLSX.utils.book_append_sheet(wb, ws, materia.nome);
-    });
-  }
-  XLSX.writeFile(wb, edital.nome + ".xlsx");
-
-  if(edital.materias.length > 0){
-
-    edital.materiaCorrente = auxMateriaCorrente;
-  }
-}
-*/
-//repetir função exportarExcell configurando a largura das colunas como automática
 function exportarExcel() {
   let indexEdital = getIndexEdital(document.getElementById("nome-edital").innerHTML);
   let edital = usuario.editais[indexEdital];
@@ -88,6 +36,7 @@ function exportarExcel() {
       }
     });
   }
+
   XLSX.writeFile(wb, edital.nome + ".xlsx");
 
   if(edital.materias.length > 0){
@@ -96,7 +45,6 @@ function exportarExcel() {
 
   }
 }
-
 
 function verificarLocalStorage() {
   if (!localStorage.getItem('token') || !localStorage.getItem('email')) {
@@ -136,32 +84,6 @@ function enviarDadosAoServidor(){
   });
 }
 
-//TODO: OK!!
-/*
-function recuperarDados() {
-  const data = { email: usuario.email };
-
-  fetch('/recuperar-dados', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(responseData => {
-    console.log("usuario: ",usuario);
-    console.log('response: ',responseData);
-    usuario = responseData;
-    console.log("usuario depois: ",usuario);
-
-  })
-  .catch(error => {
-    console.error('Erro ao recuperar dados:', error);
-  });
-}
-*/
-
 function recuperarDados(){
   return new Promise((resolve, reject) => {
     const data = { email: usuario.email };
@@ -199,27 +121,6 @@ function download(filename, text) {
   //document.body.removeChild(element);
 }
 
-/*
-///TODO: função para fazer download de arquivo json COM SOBRESCRITA - NÃO FUNCIONA
-function download(filename, text) {
-  var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/json;charset=utf-8,' + encodeURIComponent(text));
-  element.setAttribute('download', filename);
-  element.style.display = 'none';
-
-  // Remove qualquer elemento existente com o mesmo nome de arquivo
-  var existingElement = document.querySelector('[download="' + filename + '"]');
-  if (existingElement) {
-    document.body.removeChild(existingElement);
-  }
-
-  document.body.appendChild(element);
-  element.click();
-  document.body.removeChild(element);
-}
-*/
-// ler token jwt no cabeçaçho da requisição
-
 function validarToken() {
 
   verificarLocalStorage();
@@ -245,7 +146,7 @@ function validarToken() {
       if(responseData.email == email)
       {
         usuario = responseData;
-        localStorage.setItem('nome', usuario.nome);//!!!!!!!!!!!!!
+        localStorage.setItem('nome', usuario.nome);
         console.log("Token válido!");
         resolve();
       }
@@ -263,17 +164,8 @@ function validarToken() {
   });
 }
 
-/*
-if(decoded.email != email)
-{
-  alert("Token inválido!");
-  window.location.href = "login.html";
-}
-*/
-// Chamar a função recuperarDados quando a página é carregada
 //window.addEventListener('DOMContentLoaded', validarToken());
 
-//ONLOAD CARREGAR OS BOTÕES DOS EDITAIS COM BASE NO OBJETO USUÁRIO RECEBIDO DO SERVIDOR
 window.onload = function() {
   //verificarLocalStorage();
 
@@ -281,10 +173,9 @@ window.onload = function() {
 
     recuperarDados().then(() => {
 
-      //download("usuario.json",JSON.stringify(usuario));
-      imprimirUsuarioNoCosole();////
+      imprimirUsuarioNoCosole();
       console.log(usuario);
-      document.getElementById("nome-usuario").innerHTML = "Olá, " + usuario.nome + ".";//!!!
+      document.getElementById("nome-usuario").innerHTML = "Olá, " + usuario.nome + ".";
 
       reloadButtonsEditais();
     });
@@ -381,8 +272,6 @@ function reloadButtonsMaterias() {
   }
 }
 
-//document.addEventListener("DOMContentLoaded",)
-
 // ORDENAR POR ORDEM ALFABÉTICA
 function sortEditaisEMaterias(){
   //ordenar editais por ordem alfabética
@@ -397,7 +286,7 @@ function sortEditaisEMaterias(){
   });
 }
 
-// gralet no localStorage
+// gravar no localStorage
 function gravarUsuarioNoLocalStorage() {
   sortEditaisEMaterias();
   localStorage.setItem("usuario", JSON.stringify(usuario));
@@ -472,8 +361,7 @@ function importarEdital() {
     reader.readAsText(file);
     reader.onload = function() {
       let edital = JSON.parse(reader.result);
-      //console.log(edital);
-      //console.log(usuario);
+
       let indexEdital = getIndexEdital(edital.nome);
       if(indexEdital != -1)
       {
@@ -482,7 +370,6 @@ function importarEdital() {
       }
       usuario.editais.push(edital);
       //gravarUsuarioNoLocalStorage();
-
 
       enviarDadosAoServidor().then(() => {
         imprimirUsuarioNoCosole();
@@ -546,29 +433,14 @@ function getIndexItemEdital(nomeItem) {
   let indexItem = usuario.editais[indexEdital].info_importantes.topics.findIndex(item => item.item == nomeItem);
   return indexItem;
 }
-/*
-function editarItem1(elemento) {
-  let indexEdital = getIndexEdital(document.getElementById("nome-edital").innerHTML);
-  let indexItem = getIndexItemEdital(elemento.parentNode.childNodes[1].innerHTML);
-  let item = usuario.editais[indexEdital].info_importantes.topics[indexItem].item;
-  let novoItem = prompt("Editar item:", item);
-  if (novoItem === "" || novoItem === null) {
-    alert("Por favor, insira um item");
-    return;
-  }
-  usuario.editais[indexEdital].info_importantes.topics[indexItem].item = novoItem;
-  gravarUsuarioNoLocalStorage();////
-  imprimirUsuarioNoCosole();////
-  elemento.parentNode.childNodes[1].innerHTML = novoItem;
-}
-*/
+
 function riscadoItemEdital(textoItem,linethrough) {
   let indexEdital = getIndexEdital(document.getElementById("nome-edital").innerHTML);
   let indexItem = getIndexItemEdital(textoItem);
   usuario.editais[indexEdital].info_importantes.topics[indexItem].linethrough = linethrough;
-  //gravarUsuarioNoLocalStorage();////
-  enviarDadosAoServidor();//! para o servidor
-  imprimirUsuarioNoCosole();////
+  //gravarUsuarioNoLocalStorage();
+  enviarDadosAoServidor();
+  imprimirUsuarioNoCosole();
 }
 
 function criarLinhaTopicos1(item,operacao){
@@ -626,25 +498,13 @@ function criarLinhaTopicos1(item,operacao){
       riscadoItemEdital(item,false);
     }
   });
-  /////////////////
+
   li.appendChild(checkbox);
   li.appendChild(p1);
   li.appendChild(botaoRiscar);
-  li.appendChild(edit);////////////////////////EDIT
+  li.appendChild(edit);
   li.appendChild(lixeira);
-  /*
-  p1.addEventListener("click", function() {
-    this.classList.toggle("riscado");
-    if(this.classList.contains("riscado"))
-    {
-      riscadoItemEdital(item,true);
-    }
-    else
-    {
-      riscadoItemEdital(item,false);
-    }
-  });
-  */
+
   checkbox.addEventListener("click", function() {
     if(this.checked)
     {
@@ -662,9 +522,9 @@ function setChecked1(item,checked) {
   let indexEdital = getIndexEdital(document.getElementById("nome-edital").innerHTML);
   let indexItem = getIndexItemEdital(item);
   usuario.editais[indexEdital].info_importantes.topics[indexItem].checked = checked;
-  //gravarUsuarioNoLocalStorage();////
-  enviarDadosAoServidor();//! para o servidor
-  imprimirUsuarioNoCosole();////
+  //gravarUsuarioNoLocalStorage();
+  enviarDadosAoServidor();
+  imprimirUsuarioNoCosole();
 }
 
 function reloadItens1() {
@@ -711,9 +571,9 @@ function editarItem(textoItem,elemento,n) {
     if (novoItem != null) {
       elemento.parentNode.childNodes[1].innerHTML = novoItem;
       usuario.editais[indexEdital].info_importantes.topics[indexItem].item = novoItem;
-      //gravarUsuarioNoLocalStorage();////
+      //gravarUsuarioNoLocalStorage();
       enviarDadosAoServidor().then(() => {
-        imprimirUsuarioNoCosole();////
+        imprimirUsuarioNoCosole();
         //window.location.reload();
         //processReloadButtonsEditais();
         //mostrarEdital(document.getElementById("nome-edital").innerHTML);
@@ -752,9 +612,9 @@ function riscadoItemMateria(textoItem,linethrough) {
   let indexMateria = getIndexMateria(document.getElementById("nome-materia").innerHTML);
   let indexItem = getIndexItemMateria(textoItem);
   usuario.editais[indexEdital].materias[indexMateria].topics[indexItem].linethrough = linethrough;
-  //gravarUsuarioNoLocalStorage();////
-  enviarDadosAoServidor();//! para o servidor
-  imprimirUsuarioNoCosole();////
+  //gravarUsuarioNoLocalStorage();
+  enviarDadosAoServidor();
+  imprimirUsuarioNoCosole();
 }
 
 function criarLinhaTopicos2(item,operacao)
@@ -779,7 +639,6 @@ function criarLinhaTopicos2(item,operacao)
   edit.setAttribute("class","material-icons");
   edit.setAttribute("style","color:gray;font-size:20px;padding-left:10px");
   edit.innerHTML = "edit";
-  //////
 
   let lixeira = document.createElement("i");
   lixeira.setAttribute("onclick","removeItem('"+item+"',this,2)");
@@ -815,26 +674,14 @@ function criarLinhaTopicos2(item,operacao)
       riscadoItemMateria(item,false);
     }
   });
-  //////////////////
+
   //p1.setAttribute("onclick","setRiscado2(this)");
   li.appendChild(checkbox);
   li.appendChild(p1);
   li.appendChild(botaoRiscar);
-  li.appendChild(edit);////////////////////////EDIT
+  li.appendChild(edit);
   li.appendChild(lixeira);
-  /*
-  p1.addEventListener("click", function() {
-    this.classList.toggle("riscado");
-    if(this.classList.contains("riscado"))
-    {
-      riscadoItemMateria(item,true);
-    }
-    else
-    {
-      riscadoItemMateria(item,false);
-    }
-  });
-  */
+
   checkbox.addEventListener("click", function() {
     if(this.checked)
     {
@@ -854,9 +701,9 @@ function setChecked2(textoItem,checked) {
   let indexMateria = getIndexMateria(document.getElementById("nome-materia").innerHTML);
   let indexItem = getIndexItemMateria(textoItem);
   usuario.editais[indexEdital].materias[indexMateria].topics[indexItem].checked = checked;
-  //gravarUsuarioNoLocalStorage();////
-  enviarDadosAoServidor();//! para o servidor
-  imprimirUsuarioNoCosole();////
+  //gravarUsuarioNoLocalStorage();
+  enviarDadosAoServidor();
+  imprimirUsuarioNoCosole();
 }
 
 function addItem(lista_n)
@@ -878,46 +725,12 @@ function addItem(lista_n)
       item: item,
       checked: false,
       linethrough: false
-    });////objeto
-    //console.log(usuario.editais);
-    //gravarUsuarioNoLocalStorage();////
-    enviarDadosAoServidor();//! para o servidor
-    imprimirUsuarioNoCosole();////
-  }
-  /*
-  if (lista_n == 2)
-  {
-    let item = document.getElementById("item-2").value;
-    if (item === "") {
-      alert("Por favor, insira um item");
-      return;
-    }
-    let li = document.createElement("li");
-    let checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    let p1 = document.createElement("span");
-    let lixeira = document.createElement("i");
-    lixeira.setAttribute("onclick","removeItem(this)");
-    lixeira.setAttribute("class","material-icons");
-    lixeira.setAttribute("style","color:gray;font-size:20px;padding-left:10px");
-    lixeira.innerHTML = "delete";
-    li.setAttribute("style","background-color:WhiteSmoke;border-radius:5px;margin:3px");
-
-    p1.innerHTML = item ;
-    //lixeira.innerHTML = "<i onclick='removeItem(this)' class='material-icons'>delete</i>"
-    //li.innerHTML = "<input type='checkbox'>";
-    li.appendChild(checkbox);
-    li.appendChild(p1);
-    li.appendChild(lixeira);
-    p1.addEventListener("click", function() {
-      this.classList.toggle("riscado");
     });
-    //li.appendChild(p1);
-    //li.appendChild("<i onclick='removeItem(this)' class='material-icons'>delete</i>");
-    document.getElementById("list-2").appendChild(li);
-    document.getElementById("item-2").value = "";
+    //console.log(usuario.editais);
+    //gravarUsuarioNoLocalStorage();
+    enviarDadosAoServidor();
+    imprimirUsuarioNoCosole();
   }
-  */
 }
 
 function removeItem(textoItem,elemento,list_n) {
@@ -931,7 +744,7 @@ function removeItem(textoItem,elemento,list_n) {
     let spliced = usuario.editais[indexEdital].info_importantes.topics.splice(indexItem, 1);
     console.log("SPLICED 1: " + spliced);
   }
-  ////////////////////////////////////////////////////////////////
+
   if(list_n == 2)
   {
     let indexMateria = getIndexMateria(document.getElementById("nome-materia").innerHTML);
@@ -940,11 +753,11 @@ function removeItem(textoItem,elemento,list_n) {
     let spliced = usuario.editais[indexEdital].materias[indexMateria].topics.splice(indexItem, 1);
     console.log("SPLICED 2: " + spliced);
   }
-  /////////////////////////////////////////////////////////////////
+
   //console.log(usuario.editais);
-  //gravarUsuarioNoLocalStorage();////
-  enviarDadosAoServidor();//! para o servidor
-  imprimirUsuarioNoCosole();////
+  //gravarUsuarioNoLocalStorage();
+  enviarDadosAoServidor();
+  imprimirUsuarioNoCosole();
 }
 
 //CONVERTE TEXTO PARA LISTA:
@@ -957,7 +770,7 @@ function createList() {
   }
 
   const delimiters = document.getElementById('delimiters').value.split(' ');
-  const regex = new RegExp('[' + delimiters.join('') + ']', 'g');//Estudar esta parte
+  const regex = new RegExp('[' + delimiters.join('') + ']', 'g');
   const items = inputText.split(regex);
 
   const outputList = document.getElementById('list-2');
@@ -1010,23 +823,16 @@ function mostrarPrompt(id) {
     {
       usuario.editais[indexEdital].info_importantes.data_prova = informacao;
     }
-    //gravarUsuarioNoLocalStorage();////
-    enviarDadosAoServidor();//! para o servidor
-    imprimirUsuarioNoCosole();////
+    //gravarUsuarioNoLocalStorage();
+    enviarDadosAoServidor();
+    imprimirUsuarioNoCosole();
   }
 }
 
-/*
-função para criar um novo elemento semelhante ao button-edital com:
-  conteúdo definido pelo usuário
-  id nomeado a partir do conteúdo definido pelo usuário
-  onclick que chama a função mostrarEdital()
-inserir o novo elemento à nav-editais
-*/
 function criarEdital() {
-  //gravarUsuarioNoLocalStorage();////
+  //gravarUsuarioNoLocalStorage();
   //let usuario = JSON.parse(localStorage.getItem("usuario"));
-  //imprimirUsuarioNoCosole();////
+  //imprimirUsuarioNoCosole();
 
   const outputEditais = document.getElementById('nav-editais');
   let nomeEdital = prompt("Digite nome do edital:");
@@ -1056,7 +862,7 @@ function criarEdital() {
       },
       materias:
       []
-    });////objeto
+    });
 
     usuario.editalCorrente = nomeEdital;
 
@@ -1069,9 +875,9 @@ function criarEdital() {
 function mostrarEdital(nomeEdital){
   return new Promise((resolve, reject) => {
     usuario.editalCorrente = nomeEdital;
-    //gravarUsuarioNoLocalStorage();////
+    //gravarUsuarioNoLocalStorage();
     enviarDadosAoServidor().then(() => {
-      imprimirUsuarioNoCosole();////
+      imprimirUsuarioNoCosole();
       usuario.editais.forEach(function(edital) {
         if(edital.nome != nomeEdital)
         {
@@ -1083,10 +889,6 @@ function mostrarEdital(nomeEdital){
         }
       });
 
-      /*
-      let containerEdital = document.getElementById('container-edital');
-      containerEdital.setAttribute("style","display:static");
-      */
       //CAPTURAR OBJETOS DO OBJETO USUÁRIO
       let indexEdital = getIndexEdital(nomeEdital);
       let edital = usuario.editais[indexEdital];
@@ -1119,35 +921,7 @@ function mostrarEdital(nomeEdital){
         let outPutList = document.getElementById('list');
         outPutList.innerHTML = '';
       }
-      /*
-      //APAGAR BOTÕES DAS MATÉRIAS
-      let outPutMaterias = document.getElementById('col-materias');
-      outPutMaterias.innerHTML = '';
-      //EXIBE BOTÃO DE ADICIONAR MATÉRIAs
-      let button = document.createElement('div');
-      button.innerHTML = "Nova Matéria";
-      button.setAttribute("class","button-add");
-      button.setAttribute("onclick", "criarMateria()");
-      outPutMaterias.appendChild(button);
 
-      //EXIBE BOTÕES Das MATÉRIAS
-      if(materias.length > 0){
-        materias.forEach(function(materia) {
-          let button = document.createElement('div');
-          button.innerHTML = materia.nome;
-          button.setAttribute("id", "btn-materia-" + materia.nome);
-          button.setAttribute("class","button-materia");
-          button.setAttribute("onclick", "mostrarMateria('"+ materia.nome +"')");
-          outPutMaterias.appendChild(button);
-        });
-
-        mostrarMateria(edital.materiaCorrente);
-      }
-      else{
-        let containerMateria = document.getElementById('container-materia');
-        containerMateria.setAttribute("style","display:none");
-      }
-      */
       reloadButtonsMaterias();
 
       let containerEdital = document.getElementById('container-edital');
@@ -1170,23 +944,22 @@ function criarMateria() {
     button.setAttribute("class","button-materia");
     button.setAttribute("onclick", "mostrarMateria('" + nomeMateria + "')");
 
-    button.setAttribute("style","display:none");//!
+    button.setAttribute("style","display:none");
 
     outputMaterias.appendChild(button);
 
     //COLOCAR NOME DA MATÉRIA NO OBJETO USUÁRIO
     let indexEdital = getIndexEdital(document.getElementById("nome-edital").innerHTML);
 
-    usuario.editais[indexEdital].materiaCorrente = nomeMateria;////////////
+    usuario.editais[indexEdital].materiaCorrente = nomeMateria;
     usuario.editais[indexEdital].materias.push({
       nome: nomeMateria,
       topics:
       []
-    });////objeto
-    //console.log(usuario.editais);
-    //gravarUsuarioNoLocalStorage();////
+    });
+
     enviarDadosAoServidor().then(() => {
-      imprimirUsuarioNoCosole();////
+      imprimirUsuarioNoCosole();
 
       mostrarMateria(nomeMateria).then(() => {
         //window.location.reload();
@@ -1205,10 +978,10 @@ function mostrarMateria(nomeMateria){
     let topics = materia.topics;
     console.log(materia);
 
-    usuario.editais[indexEdital].materiaCorrente = nomeMateria;////////////
-    //gravarUsuarioNoLocalStorage();////
+    usuario.editais[indexEdital].materiaCorrente = nomeMateria;
+    //gravarUsuarioNoLocalStorage();
     enviarDadosAoServidor().then(() => {
-      imprimirUsuarioNoCosole();////
+      imprimirUsuarioNoCosole();
 
       usuario.editais[indexEdital].materias.forEach(function(materia) {
         if(materia.nome != nomeMateria)
@@ -1261,10 +1034,10 @@ function excluirEdital() {
     {
       usuario.editalCorrente = "";
     }
-    //gravarUsuarioNoLocalStorage();////
+    //gravarUsuarioNoLocalStorage();
     enviarDadosAoServidor().then(() => {
 
-      imprimirUsuarioNoCosole();////
+      imprimirUsuarioNoCosole();
       //window.location.reload();
       processReloadButtonsEditais();
     });
@@ -1287,9 +1060,9 @@ function excluirMateria() {
       usuario.editais[indexEdital].materiaCorrente = "";
     }
 
-    //gravarUsuarioNoLocalStorage();////
+    //gravarUsuarioNoLocalStorage();
     enviarDadosAoServidor().then(() => {
-      imprimirUsuarioNoCosole();////
+      imprimirUsuarioNoCosole();
       //window.location.reload();
       processReloadButtonsMaterias();
     });
@@ -1305,9 +1078,9 @@ function renomearEdital() {
     document.getElementById("nome-edital").innerHTML = novoNomeEdital;
     usuario.editais[indexEdital].nome = novoNomeEdital;
     usuario.editalCorrente = novoNomeEdital;
-    //gravarUsuarioNoLocalStorage();////
+    //gravarUsuarioNoLocalStorage();
     enviarDadosAoServidor().then(() => {
-      imprimirUsuarioNoCosole();////
+      imprimirUsuarioNoCosole();
       //window.location.reload();
       processReloadButtonsEditais();
     });
@@ -1324,9 +1097,9 @@ function renomearMateria() {
     document.getElementById("nome-materia").innerHTML = novoNomeMateria;
     usuario.editais[indexEdital].materias[indexMateria].nome = novoNomeMateria;
     usuario.editais[indexEdital].materiaCorrente = novoNomeMateria;
-    //gravarUsuarioNoLocalStorage();////
+    //gravarUsuarioNoLocalStorage();
     enviarDadosAoServidor().then(() => {
-      imprimirUsuarioNoCosole();////
+      imprimirUsuarioNoCosole();
       //window.location.reload();
       processReloadButtonsMaterias();
     });

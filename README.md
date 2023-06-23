@@ -1,7 +1,7 @@
-# Projeto: Portal de controle de estudos para concursos.
+## Projeto: Portal de controle de estudos para concursos.
 
-## Universidade Federal do Rio Grande do Norte
-## Disciplina: Desenvolvimento de Sistemas WEB 2023.1
+### Universidade Federal do Rio Grande do Norte
+### Disciplina: Desenvolvimento de Sistemas WEB 2023.1
 ### Professor: Jair C. Leite
 ### Aluno: André Augusto Fernandes
 #

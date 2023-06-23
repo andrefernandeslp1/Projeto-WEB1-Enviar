@@ -10,4 +10,6 @@ Projeto de WEB1: Portal de controle de estudos para processos seletivos.
 ![Screenshot 2023-06-23 at 11-53-09 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/3f4ace4a-144c-46df-93fe-f8bfbe8f3d61)
 ![Screenshot 2023-06-23 at 11-41-03 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/dce18975-43c7-4bae-8ef8-70274ff20c1b)
 ![Screenshot 2023-06-23 at 11-50-26 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/5cdb1142-d0e6-42cb-acaa-e0261a047967)
+![Screenshot 2023-06-23 at 11-55-56 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/0391d55a-4047-4fdc-a8e3-447ca2e98dc3)
+![Screenshot 2023-06-23 at 11-56-14 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/709fec0c-38e5-47f7-8f1d-56b73e44319d)
 ![Screenshot 2023-06-23 at 11-46-09 EDITALLY - Perfil](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/a23cc655-7f74-4311-abeb-c859802edc85)

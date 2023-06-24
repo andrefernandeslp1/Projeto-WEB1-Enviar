@@ -1,7 +1,7 @@
 
 ## Projeto: Portal de controle de estudos para concursos
 
-#
+
 
 #### Universidade Federal do Rio Grande do Norte
 
@@ -18,14 +18,14 @@
 Este projeto foi desenvolvido para a disciplina de Desenvolvimento de Sistemas WEB I, como meio de avaliar os conhecimentos adquiridos pelo aluno ao longo da disciplina.
 Os requisitos da avaliação eram desenvolver um sistema WEB composto de FrontEnd com a utilização das tecnologias Html, CSS e JavaScript, além de um servidor local, BackEnd, utilizando Node e Javascript, para processar as requisições do cliente.
 
-#
+
 
 ## 2. Objetivo
 
 Tendo em vista os requisitos acima mencionados, tirei da experiência pessoal a ideia para meu projeto: a falta de uma tecnologia que permitisse organizar e controlar de forma eficiente o estudo para concursos.
 Foi aí que surgiu o Editally, um portal que se propõe a oferecer um ambiente de controle de estudos para processos seletivos levados a cabo por meio de provas de avaliação de conhecimentos, em que se faz necessária a verticalização das principais informações e conteúdo programático objetos do edital. O candidato poderá cadastrar seu edital de forma rápida e eficiente, e acompanhar sua evolução por meio de funcionalidades pensadas para facilitar seu estudo.
 
-#
+
 
 ## 3. Instruções
 
@@ -48,8 +48,6 @@ Com o servidor rodando, abra o browser e acesse seguinte endereço: `http://loca
 *Voilá!!!* Caso todos as etapas acima tiverem sido processadas corretamente, você terá acesso ao Portal e poderá iniciar sua jornada de estudos.
 
 A seguir descreverei as principais funcionalidades do site e falarei sobre sua implementação. Vamos lá!?
-
-#
 
 ## 4.
 

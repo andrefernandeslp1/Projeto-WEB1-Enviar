@@ -1,4 +1,4 @@
-# Projeto: Portal de controle de estudos para concursos
+# Projeto: Portal de controle de estudos.
 
 
 
@@ -20,7 +20,7 @@ Este projeto foi desenvolvido para a disciplina de Desenvolvimento de Sistemas W
 
 ## 2. Objetivo
 
-Os requisitos da avaliação eram desenvolver um sistema WEB composto de FrontEnd com a utilização das tecnologias Html, CSS e JavaScript, além de um servidor local, BackEnd, utilizando Node e Javascript, para processar as requisições do cliente.
+Os requisitos da avaliação eram desenvolver um sistema WEB composto de Frontend, com a utilização das tecnologias Html, CSS e JavaScript, além de um servidor local, Backend, utilizando Node e Javascript, para processar as requisições do cliente.
 
 
 
@@ -35,13 +35,13 @@ Foi aí que surgiu o Editally, um portal que se propõe a oferecer um ambiente d
 
 
 
-#### 4.1. Instalar do Node.js
+#### 4.1. Instalar o Node.js
 
 Para rodar o servidor local, será necessário instalar o Node.js na sua máquina. Prossiga à instalação através do seguinte link: [Node JS](https://nodejs.org/en).
 
 
 
-#### 4.2. Baixar arquivos no Repositório
+#### 4.2. Baixar arquivos
 
 Após a instalação do Node.js, baixe a pasta `/SERVIDOR` deste repositório para o local de sua preferência em seu computador.
 
@@ -49,7 +49,9 @@ Após a instalação do Node.js, baixe a pasta `/SERVIDOR` deste repositório pa
 
 #### 4.3. Inicializar Servidor Local
 
-Abra o Prompt de Comando dentro da pasta `/SERVIDOR` e excecute o seguinte comando: `node meuservidor.js`. Caso não hajam problemas, seu servidor local estará ativo.
+Abra o Prompt de Comando dentro da pasta `/SERVIDOR` e excecute o seguinte comando: `node meuservidor.js` 
+
+Caso não hajam problemas, seu servidor local estará ativo.
 
 
 
@@ -69,11 +71,11 @@ A seguir, descreverei as principais funcionalidades do site e falarei sobre sua 
 
 Ao acessar o endereço `http://localhost:3000/`, caso não haja uma sessão ativa, o usuário será direcionado à página de `/login.html`, na qual poderá entrar com suas credenciais e acessar a página principal (`/index.html`), ou acessar o link `Criar Conta` para se cadastrar.
 
+![Screenshot 2023-06-23 at 11-28-57 EDITALLY - Login](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/69270ed7-34f7-4469-b80d-7472eb630728)
+
 #### 5.1.1. Implementação
 
 Ao clicar em `Entrar`, a página enviará as credenciais do usuário para conferência no servidor. Caso haja identidade entre a base de dados e os dados passados pelo usuário, o servidor devolverá um Token ao cliente, que será armazenado localmente. Em seguida, a página `/index.html` será chamada.
-
-![Screenshot 2023-06-23 at 11-28-57 EDITALLY - Login](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/69270ed7-34f7-4469-b80d-7472eb630728)
 
 
 
@@ -81,12 +83,12 @@ Ao clicar em `Entrar`, a página enviará as credenciais do usuário para confer
 
 Ao acessar a página de Cadastro, o usuário poderá se cadastrar e tornar-se membro do portal, passando a ter acesso ao sistema de estudos.
 
+![Screenshot 2023-06-23 at 11-31-08 EDITALLY - Cadastro](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/8dacf754-3191-4010-8d23-019e32d92502)
+
 #### 5.2.1. Implmentação
 
 Ao clicar em Cadastro, as informações do usuário serão enviadas ao servidor, que irá inserir o novo membro na base de dados e devolver um Token válido para ser armazenado localmente.
 Em seguida, o usuário será direcionado para a página `/index.html`, na qual se dará efetivamente a utilização da página.
-
-![Screenshot 2023-06-23 at 11-31-08 EDITALLY - Cadastro](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/8dacf754-3191-4010-8d23-019e32d92502)
 
 
 
@@ -120,7 +122,7 @@ Ao rolar a página para baixo, algumas informações serão ocultadas para facil
 
 ![Screenshot 2023-06-23 at 11-55-56 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/0391d55a-4047-4fdc-a8e3-447ca2e98dc3)
 
-Na imagem abaixo podemos observar o comportamento da página ao empilhar todos os cabeçalhos para acessar as informações mais abaixo.
+Na imagem abaixo, podemos observar o comportamento ao rolar a página para visualizar os tópicos mais inferiores.  
 
 ![Screenshot 2023-06-23 at 11-56-14 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/709fec0c-38e5-47f7-8f1d-56b73e44319d)
 
@@ -136,11 +138,13 @@ Ao ser inicialmente invocada, verifica a existência de um Token no armazenament
 A página `/perfil.html` poderá ser acessada através do menu 👤 (usuário) em `/index.html`, ou invocada manualmente, caso haja um token válido no cliente.
 Aqui, o usuário poderá alterar suas informações de cadastro.
 
+![Screenshot 2023-06-23 at 11-46-09 EDITALLY - Perfil](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/a23cc655-7f74-4311-abeb-c859802edc85)
+
 #### 5.4.1. Implementação
 
 Assim como nas implementações anteriores, aqui, ao processar a operação solicitada, será feita a validação do token presente no cliente e em seguida o envio das informações ao servidor para serem registradas.
 
-![Screenshot 2023-06-23 at 11-46-09 EDITALLY - Perfil](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/a23cc655-7f74-4311-abeb-c859802edc85)
+
 
 
 

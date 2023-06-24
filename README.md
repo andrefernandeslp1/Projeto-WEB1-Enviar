@@ -14,30 +14,33 @@
 ## 1. Introdução
 
 Este projeto foi desenvolvido para a disciplina de Desenvolvimento de Sistemas WEB I, como meio de avaliar os conhecimentos adquiridos pelo aluno ao longo da disciplina.
-Os requisitos da avaliação eram desenvolver um sistema WEB composto de FrontEnd com a utilização das tecnologias Html, CSS e JavaScript, além de um servidor local, BackEnd, utilizando Node e Javascript, para processar as requisições do cliente.
 
 
 ## 2. Objetivo
 
-Tendo em vista os requisitos acima mencionados, tirei da experiência pessoal a ideia para meu projeto: a falta de uma tecnologia que permitisse organizar e controlar de forma eficiente o estudo para concursos.
-Foi aí que surgiu o Editally, um portal que se propõe a oferecer um ambiente de controle de estudos para processos seletivos levados a cabo por meio de provas de avaliação de conhecimentos, em que se faz necessária a verticalização das principais informações e conteúdo programático objetos do edital. O candidato poderá cadastrar seu edital de forma rápida e eficiente, e acompanhar sua evolução por meio de funcionalidades pensadas para facilitar seu estudo.
+Os requisitos da avaliação eram desenvolver um sistema WEB composto de FrontEnd com a utilização das tecnologias Html, CSS e JavaScript, além de um servidor local, BackEnd, utilizando Node e Javascript, para processar as requisições do cliente.
+
+## 3. Proposta
+
+Da experiência pessoal, veio a ideia para meu projeto: a falta de uma tecnologia que permitisse organizar e controlar de forma ágil e eficiente o estudo para concursos.
+Foi aí que surgiu o Editally, um portal que se propõe a oferecer um ambiente de controle de estudos para processos seletivos, em que se faz necessária a verticalização das principais informações e conteúdo programático objetos do edital. O candidato poderá cadastrar seu edital de forma rápida e eficiente, e acompanhar sua evolução por meio de funcionalidades pensadas para facilitar seu estudo.
 
 
-## 3. Instruções
+## 4. Instruções de uso
 
-### 3.1. Instalação do Node.js
+### 4.1. Instalação do Node.js
 
 Para rodar o servidor local, será necessário instalar o Node.js na sua máquina. Prossiga à instalação através do seguinte link: [Node JS](https://nodejs.org/en).
 
-### 3.2. Baixar arquivos do Repositório
+### 4.2. Baixar arquivos do Repositório
 
 Após a instalação do Node.js, baixe a pasta `/SERVIDOR` deste repositório para o local de sua preferência em seu computador.
 
-### 3.3. Inicializar Servidor Local
+### 4.3. Inicializar Servidor Local
 
 Abra o Prompt de Comando dentro da pasta `/SERVIDOR` e excecute o seguinte comando: `node meuservidor.js`. Caso não hajam problemas, seu servidor local estará ativo.
 
-### 3.4. Acessar Portal
+### 4.4. Acessar Portal
 
 Com o servidor rodando, abra o browser e acesse seguinte endereço: `http://localhost:3000/`
 
@@ -46,30 +49,30 @@ Com o servidor rodando, abra o browser e acesse seguinte endereço: `http://loca
 A seguir descreverei as principais funcionalidades do site e falarei sobre sua implementação. Vamos lá!?
 
 
-## 4.
+## 5.
 
-### 4.1. `/login.html`
+### 5.1. `/login.html`
 
 Ao acessar o endereço `http://localhost:3000/`, caso não haja uma sessão ativa, o usuário será direcionado para a página de `/login.html`, na qual poderá entrar com suas credenciais e acessar a página principal (`/index.html`), caso tenha cadastro, ou acessar o link `Criar Conta` para se cadastrar.
 
-### 4.1.1. Implementação
+### 5.1.1. Implementação
 
 Ao clicar em `Entrar`, a página enviará as credenciais do usuário para conferência no servidor. Caso haja identidade entre a base de dados e os dados passados pelo usuário, o servidor devolverá um Token ao cliente, que será armazenada localmente. Em seguida, a página `/index.html` será chamada.
 
 ![Screenshot 2023-06-23 at 11-28-57 EDITALLY - Login](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/69270ed7-34f7-4469-b80d-7472eb630728)
 
-### 4.2. `/cadastro.html`
+### 5.2. `/cadastro.html`
 
 Ao acessar a página de Cadastro, o usuário poderá se cadastrar e tornar-se membro do portal, passando a ter acesso ao sistema de estudos.
 
-### 4.2.1. Implmentação
+### 5.2.1. Implmentação
 
 Ao clicar em Cadastro, as informações do usuário serão enviadas ao servidor, que irá inserir o novo membro na base de dados e devolver um Token válido para ser armazenado localmente.
 Em seguida, o usuário será direcionado para a página `/index.html`, na qual se dará efetivamente o uso da página.
 
 ![Screenshot 2023-06-23 at 11-31-08 EDITALLY - Cadastro](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/8dacf754-3191-4010-8d23-019e32d92502)
 
-### 4.3. `/index.html`
+### 5.3. `/index.html`
 
 Uma vez logado no sistema, o usuário dará inicio à sua jornada de estudos, cadastrando um novo edital ou importando um criado anteriormente.
 
@@ -101,7 +104,7 @@ Ao rolar a página para baixo, algumas informações serão ocultas para facilit
 
 Na imagem abaixo podemos observar o comportamento da página ao empilhar todos os cabeçalhos para acessar as informações mais abaixo.
 
-## 4.3.1. Implementação
+## 5.3.1. Implementação
 
 A página `/index.html` opera da seguinte maneira:
 Ao ser inicialmente invocada, verifica a existência de um Token no armazenamento local. Caso haja um token, o mesmo será enviado ao servidor para validação. Uma vez válido, o usuário terá acesso à página e receberá as informações do usuário contidas no sevidor desde seu último acesso.
@@ -109,12 +112,12 @@ Uma vez recebidos os dados, o aluno poderá visualizar e acessar os dados daquel
 
 ![Screenshot 2023-06-23 at 11-56-14 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/709fec0c-38e5-47f7-8f1d-56b73e44319d)
 
-## 4.4. `/perfil.html`
+## 5.4. `/perfil.html`
 
 A página `/perfil.html` poderá ser acessada através do menu usuário em `/index.html` ou invocada manualmente caso haja um token válido no cliente.
 Aqui, o usuário poderá alterar suas informações de cadastro.
 
-## 4.4.1. Implementação
+## 5.4.1. Implementação
 
 Assim como nas implementações anteriores, aqui, ao processar a operação solicitada, será feita a validação do token presente no cliente e em seguida o envio das informações ao servidor para serem registradas.
 

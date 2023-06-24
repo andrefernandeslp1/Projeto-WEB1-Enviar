@@ -157,6 +157,7 @@ Não foram utilizados frameworks no projeto. Contudo, para continuar desenvolven
 #### 7.2. Bibliotecas/Módulos
 
 Para implementar o sistema, foram utilizados os seguites módulos pelo lado do servidor:
-![code](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/015abe92-7ae4-40ab-bad7-3fce9300d9c3)
+![code2](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/e97b975b-a0c0-440a-b657-04ec5fd7381d)
+
 
 

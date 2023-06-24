@@ -142,7 +142,7 @@ Aqui, o usuário poderá alterar suas informações de cadastro.
 
 #### 5.4.1. Implementação
 
-Assim como nas implementações anteriores, aqui, ao processar a operação solicitada, será feita a validação do token presente no cliente e em seguida o envio das informações ao servidor para serem registradas.
+Assim como nas implementações anteriores, aqui, ao processar a operação solicitada, será feita a validação do token enviado pela página e, em seguida, o envio das informações ao servidor para serem registradas.
 
 
 

@@ -33,17 +33,25 @@ Foi aí que surgiu o Editally, um portal que se propõe a oferecer um ambiente d
 
 ## 4. Instruções de uso
 
+
+
 #### 4.1. Instalar do Node.js
 
 Para rodar o servidor local, será necessário instalar o Node.js na sua máquina. Prossiga à instalação através do seguinte link: [Node JS](https://nodejs.org/en).
+
+
 
 #### 4.2. Baixar arquivos no Repositório
 
 Após a instalação do Node.js, baixe a pasta `/SERVIDOR` deste repositório para o local de sua preferência em seu computador.
 
+
+
 #### 4.3. Inicializar Servidor Local
 
 Abra o Prompt de Comando dentro da pasta `/SERVIDOR` e excecute o seguinte comando: `node meuservidor.js`. Caso não hajam problemas, seu servidor local estará ativo.
+
+
 
 #### 4.4. Acessar Portal
 
@@ -150,9 +158,13 @@ O endereço do servidor local foi configurado como `http://localhost:3000`, que 
 
 Para desenvolver o projeto, foram utilizados Html, CSS, Javascript e Node.js.
 
+
+
 #### 7.1. Frameworks
 
 Não foram utilizados frameworks no projeto. Contudo, para continuar desenvolvendo o site, provavelmente será utilizado algum framework para implementar funcionalidades mais sofisticadas.
+
+
 
 #### 7.2. Bibliotecas/Módulos
 
@@ -160,5 +172,24 @@ Para implementar o sistema, foram utilizados os seguites módulos pelo lado do s
 
 ![code2](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/e97b975b-a0c0-440a-b657-04ec5fd7381d)
 
+Já pelo lado do cliente foram utilizadas algumas bibliotecas de ícones e módulo de conversão de arquivos.
 
 
+
+### 8. Em desenvolvimento
+
+Seguem em desenvolvimento as seguintes funcionalidades para versões futuras:
+
+* Manipulação de listas;
+
+* Medidor de progresso;
+
+* Recuperação de senha.
+  
+  
+
+### 9. Conclusão
+
+O projeto se provou de grande utilidade para solidificar os conhecimentos adquiridos durante o curso, proporcionando uma boa base de conhecimento e capacitação em sistemas WEB.
+
+Em relação ao futuro do portal, pretendo continuar o desenvolvendo e possivelmente lança-lo ao público caso atinja a maturidade pretendida.

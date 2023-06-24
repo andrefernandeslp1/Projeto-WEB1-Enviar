@@ -146,8 +146,6 @@ Assim como nas implementações anteriores, aqui, ao processar a operação soli
 
 
 
-
-
 ### 6. Servidor
 
 Para fazer a interação Frontend <-> Backend, foi criado um servidor local utilizando Node.js e Javascript.
@@ -182,7 +180,7 @@ Já pelo lado do cliente foram utilizadas algumas bibliotecas de ícones e módu
 
 
 
-### 8. Em desenvolvimento
+### 8. Em desenvolvimento 🚧
 
 Seguem em desenvolvimento as seguintes funcionalidades para versões futuras:
 

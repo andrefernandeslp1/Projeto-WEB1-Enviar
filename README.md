@@ -153,8 +153,8 @@ Assim como nas implementações anteriores, aqui, ao processar a operação soli
 Para fazer a interação Frontend <-> Backend, foi criado um servidor local utilizando Node.js e Javascript.
 
 O código para criar o servidor está implementado no arquivo `/SERVIDOR/meuservidor.js` e pode ser executado dentro da própria pasta com o seguinte comando: `node meuservidor.js`
-![Capturar](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/1aec2757-eae3-484f-975b-a0e8ac533939)
 
+![Capturar](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/df0ed702-f075-498c-8810-3296e09c34e4)
 
 O endereço do servidor local foi configurado como `http://localhost:3000`, que devera ser utilizado no browser para acessar a página.
 

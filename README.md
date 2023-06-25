@@ -129,20 +129,20 @@ Na imagem abaixo, podemos observar o comportamento ao rolar a página para visua
 #### 5.3.1. Implementação
 
 A página `/index.html` opera da seguinte maneira:
-Ao ser inicialmente invocada, verifica a existência de um Token no armazenamento local. Caso haja um token, o mesmo será enviado ao servidor para validação. Uma vez válido, o usuário terá acesso à página e receberá as informações do usuário contidas no sevidor. Uma vez recebidos os dados, o aluno poderá visualizá-los sem que novas requisições sejam feitas ao servidor. No entanto, cada vez que o estudante realizar alterações nos dados, tais mudanças serão enviadas ao servidor para gravação e posterior recuperação dos dados.
+Ao ser inicialmente invocada, verifica a existência de um Token no armazenamento local. Caso haja um token, o mesmo será enviado ao servidor para validação. Uma vez válido, o usuário terá acesso à página e receberá as informações do usuário contidas no sevidor. Recebidos os dados, o aluno poderá visualizá-los sem que novas requisições sejam feitas ao servidor. No entanto, cada vez que o estudante realizar alterações aos dados, tais mudanças serão enviadas ao servidor para gravação e posterior recuperação.
 
 
 
 ## 5.4. `/perfil.html`
 
 A página `/perfil.html` poderá ser acessada através do menu 👤 (usuário) em `/index.html`, ou invocada manualmente, caso haja um token válido no cliente.
-Aqui, o usuário poderá alterar suas informações de cadastro.
+Aqui, o usuário poderá alterar suas informações de cadastro ou excluir sua conta.
 
 ![Screenshot 2023-06-23 at 11-46-09 EDITALLY - Perfil](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/a23cc655-7f74-4311-abeb-c859802edc85)
 
 #### 5.4.1. Implementação
 
-Assim como nas implementações anteriores, aqui, ao processar a operação solicitada, será feita a validação do token enviado pela página e, em seguida, o envio das informações ao servidor para serem registradas.
+Assim como nas implementações anteriores, aqui, ao processar a operação solicitada, será feita a validação do token enviado pela página ao servidor e, em seguida, o envio das informações para serem registradas.
 
 
 
@@ -154,7 +154,7 @@ O código para criar o servidor está implementado no arquivo `/SERVIDOR/meuserv
 
 ![Capturar](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/df0ed702-f075-498c-8810-3296e09c34e4)
 
-O endereço do servidor local foi configurado como `http://localhost:3000`, que devera ser utilizado no browser para acessar a página.
+O endereço do servidor local foi configurado como `http://localhost:3000`, que deverá ser utilizado no browser para acessar a página.
 
 
 
@@ -184,11 +184,13 @@ Já pelo lado do cliente foram utilizadas algumas bibliotecas de ícones e módu
 
 Seguem em desenvolvimento as seguintes funcionalidades para versões futuras:
 
-* Manipulação de listas;
+- Manipulação de listas;
 
-* Medidor de progresso;
+- Medidor de progresso;
 
-* Recuperação de senha.
+- Melhorar Responsividade;
+
+- Recuperação de senha.
   
   
 
@@ -196,4 +198,4 @@ Seguem em desenvolvimento as seguintes funcionalidades para versões futuras:
 
 O projeto se provou de grande utilidade para solidificar os conhecimentos adquiridos durante o curso, proporcionando uma boa base de conhecimento e capacitação em sistemas WEB.
 
-Em relação ao futuro do portal, pretendo continuar o desenvolvendo e possivelmente lança-lo ao público caso atinja a maturidade pretendida.
+

@@ -45,7 +45,7 @@ function saveJsonData(filePath, array) {
 loadJsonData(DATA_FILE_PATH_USERS, users);
 loadJsonData(DATA_FILE_PATH_USERS_DATA, usersData);
 console.log("users: ",users);//!
-console.log("usersData0: ",usersData);//!
+console.log("usersData: ",usersData);//!
 
 //! SERVIDOR COMEÇA AQUI
 const server = http.createServer((req, res) => {

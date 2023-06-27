@@ -20,12 +20,11 @@ Este projeto foi desenvolvido para a disciplina de Desenvolvimento de Sistemas W
 
 ## 2. Objetivo
 
-Os requisitos da avaliação eram desenvolver um sistema WEB composto de Frontend, com a utilização das tecnologias Html, CSS e JavaScript, além de um servidor local, Backend, utilizando Node e Javascript, para processar as requisições do cliente.
+Os requisitos da avaliação eram desenvolver um sistema WEB composto de Frontend, com a utilização das tecnologias Html, CSS e JavaScript, além de um servidor local, Backend, utilizando Node e Javascript para processar as requisições do cliente.
 
 
 
 ## 3. Proposta
-
 
 Da experiência pessoal, veio a ideia para o projeto: a falta de uma tecnologia que permitisse organizar e controlar de forma ágil e eficiente o estudo para concursos.
 Foi aí que surgiu o **Editally**, um portal que se propõe a oferecer um ambiente de controle de estudos para processos seletivos, em que se faz necessária a verticalização das principais informações e conteúdo programático objetos do edital. O candidato poderá cadastrar seu edital de forma rápida e eficiente, e acompanhar sua evolução por meio de funcionalidades pensadas para facilitar seu estudo.
@@ -76,7 +75,7 @@ Ao acessar o endereço `http://localhost:3000/`, caso não haja uma sessão ativ
 
 #### 5.1.1. Implementação
 
-Ao clicar em `Entrar`, a página enviará as credenciais do usuário para conferência no servidor. Caso haja identidade entre a base de dados e os dados passados pelo usuário, o servidor devolverá um Token ao cliente, que será armazenado localmente. Em seguida, a página `/index.html` será chamada.
+Ao clicar em `Entrar`, a página enviará as credenciais do usuário para conferência no servidor. Caso haja identidade entre a base de dados e os dados passados pelo usuário, o servidor devolverá um Token ao cliente, que será armazenado localmente. Em seguida, a página `/index.html` será chamada. Para gerar o token, foi utilizado módulo **JsonWebToken (JWT)**.
 
 
 
@@ -99,7 +98,7 @@ Uma vez logado no sistema, o usuário dará inicio à sua jornada de estudos, ca
 
 ![Screenshot 2023-06-23 at 11-32-24 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/b1076b19-c991-499e-83b2-3190ed98c0cf)
 
-Uma vez cadastrado um novo edital, o usuário poderá proceder a preencher as principais informações sobre o certame e cadastras as matérias do conteúdo programático.
+Uma vez cadastrado um novo edital, o usuário poderá proceder a preencher as principais informações sobre o certame e cadastrar as matérias do conteúdo programático.
 
 ![Screenshot 2023-06-23 at 11-33-15 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/8fdad165-1e03-4a57-ad6d-21d73b686a33)
 
@@ -107,11 +106,11 @@ Cada matéria terá uma lista que poderá ser preenchida com os tópicos cobrado
 
 ![Screenshot 2023-06-23 at 11-36-59 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/66eb9d82-3cd9-4be1-8a46-e08e6f930171)
 
-O candidato poderá inserir os tópicos um a um, ou deixar o sistema fazer o trabalho "sujo" por ele. Nesse sentido, ele poderá simplesmente copiar, a partir do edital, o bloco inteiro de tópicos da matéria e, através do uso de um ou mais delimitadores, transformar o texto em uma lista de tópicos.
+O candidato poderá inserir os tópicos um a um, ou deixar o sistema fazer o trabalho "sujo" por ele. Neste sentido, ele poderá simplesmente copiar, a partir do edital, o bloco inteiro de tópicos da matéria e, através do uso de um ou mais delimitadores, transformar o texto em uma lista de tópicos.
 
 ![Screenshot 2023-06-23 at 11-53-09 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/3f4ace4a-144c-46df-93fe-f8bfbe8f3d61)
 
-Uma vez completa a criação do edital, ou a qualquer momento, o estudante poderá exportá-lo para um arquivo **JSON** ou **Excel**.
+Uma vez completa a criação do edital, ou a qualquer momento, o estudante poderá exportá-lo para um arquivo **JSON** ou **Excel**, através dos ícones à esquerda na barra do edital.
 
 ![Screenshot 2023-06-23 at 11-41-03 EDITALLY](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/dce18975-43c7-4bae-8ef8-70274ff20c1b)
 
@@ -198,5 +197,3 @@ Seguem em desenvolvimento as seguintes funcionalidades para versões futuras:
 ### 9. Conclusão
 
 O projeto se provou de grande utilidade para solidificar os conhecimentos adquiridos durante o curso, proporcionando uma boa base de conhecimento e capacitação em sistemas WEB.
-
-

@@ -1,5 +1,4 @@
-# Projeto:![logo-no-background-azul](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/5b2b7df4-1f59-4484-be59-e4dbbb1d1b6b)
- Portal de controle de estudos.
+# Projeto: Portal de controle de estudos.
 
 
 

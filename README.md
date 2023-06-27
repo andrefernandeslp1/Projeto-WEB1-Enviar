@@ -1,5 +1,6 @@
-![logo-no-background-azul - Copia](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/04a31c97-0b11-4b29-b47d-a807f89361ad)
 # Projeto: Portal de controle de estudos.
+
+![logo-no-background-azul - Copia(1)](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/419bb930-a7cc-4167-bae1-f26ef2b3206e)
 
 
 ### Universidade Federal do Rio Grande do Norte

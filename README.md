@@ -27,9 +27,9 @@ Os requisitos da avaliação eram desenvolver um sistema WEB composto de Fronten
 ## 3. Proposta
 
 Da experiência pessoal, veio a ideia para o projeto: a falta de uma tecnologia que permitisse organizar e controlar de forma ágil e eficiente o estudo para concursos.
-Foi aí que surgiu o Editally, um portal que se propõe a oferecer um ambiente de controle de estudos para processos seletivos, em que se faz necessária a verticalização das principais informações e conteúdo programático objetos do edital. O candidato poderá cadastrar seu edital de forma rápida e eficiente, e acompanhar sua evolução por meio de funcionalidades pensadas para facilitar seu estudo.
+Foi aí que surgiu o **Editally**, um portal que se propõe a oferecer um ambiente de controle de estudos para processos seletivos, em que se faz necessária a verticalização das principais informações e conteúdo programático objetos do edital. O candidato poderá cadastrar seu edital de forma rápida e eficiente, e acompanhar sua evolução por meio de funcionalidades pensadas para facilitar seu estudo.
 
-![logo-no-background-azul - Copia(1)](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/419bb930-a7cc-4167-bae1-f26ef2b3206e)
+
 
 ## 4. Instruções de uso
 

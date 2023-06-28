@@ -154,8 +154,11 @@ O código para criar o servidor está implementado no arquivo `/SERVIDOR/meuserv
 
 ![Capturar2](https://github.com/andrefernandeslp1/Projeto-WEB1-Enviar/assets/92834067/be876390-dc53-4090-98b8-2728d062bf1f)
 
-
 O endereço do servidor local foi configurado como `http://localhost:3000`, que deverá ser utilizado no browser para acessar a página.
+
+### 6.1. `Implementação`
+
+O servidor local foi implementado utilizando Node.js. Aqui o ambiente processa as diversas requisições do cliente e armazena os dados dos usuários em formato JSON. Há um arquivo chamado users.json, que armazena os dados cadastrais do membro, e um chamado usersData.json, que armazena as informações propriamente ditas, 
 
 
 
